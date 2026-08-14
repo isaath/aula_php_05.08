@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cadastro do Cliente</h1>
-    <form action="conexao_cliente.php" method="post" enctype="multipart/form-data">
+    <form action="cliente.php" method="post" enctype="multipart/form-data">
         <label for="">
             Nome do Cliente: <input type="text" name="nome" id="nome">
         </label>
