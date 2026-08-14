@@ -1,6 +1,7 @@
 <?php
 require_once "DB.php";
 
+//crud completo do funcionario
 
 class Funcionario {
     private $id;

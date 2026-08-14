@@ -1,6 +1,8 @@
 <?php
 require_once "DB.php";
 
+//crud completo do produto
+
 class Produto {
     private $id_prod;
     private $nome;
