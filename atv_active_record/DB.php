@@ -1,7 +1,7 @@
 <?php
 function getConnection() {
     $host = "localhost";
-    $dbname = "escola";
+    $dbname = "sist_floricultura";
     $user = "root";
     $pass = "";
 
