@@ -1,6 +1,7 @@
 <?php
 require_once "DB.php";
 
+//crud completo de venda
 
 class Venda {
     private $id_venda;
