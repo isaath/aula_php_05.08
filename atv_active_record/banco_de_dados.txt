@@ -1,0 +1,102 @@
+CREATE TABLE ATENDIMENTO
+(
+  id_atendimento INT NOT NULL AUTO_INCREMENT,
+  id_cliente     INT NOT NULL,
+  id_funcionario INT NOT NULL,
+  PRIMARY KEY (id_atendimento)
+);
+
+CREATE TABLE CLIENTE
+(
+  id_cliente INT          NOT NULL AUTO_INCREMENT,
+  cpf        CHAR(11)     NOT NULL,
+  nome       VARCHAR(100) NOT NULL,
+  data_nasc  DATE         NOT NULL,
+  telefone   INT          NOT NULL,
+  PRIMARY KEY (id_cliente)
+);
+
+ALTER TABLE CLIENTE
+  ADD CONSTRAINT UQ_id_cliente UNIQUE (id_cliente);
+
+ALTER TABLE CLIENTE
+  ADD CONSTRAINT UQ_cpf UNIQUE (cpf);
+
+ALTER TABLE CLIENTE
+  ADD CONSTRAINT UQ_telefone UNIQUE (telefone);
+
+CREATE TABLE FUNCIONARIO
+(
+  id_funcionario INT          NOT NULL AUTO_INCREMENT,
+  nome           VARCHAR(100) NOT NULL,
+  cpf            CHAR(11)     NOT NULL,
+  telefone       INT          NOT NULL,
+  curriculo      VARCHAR(500) NULL    ,
+  PRIMARY KEY (id_funcionario)
+);
+
+ALTER TABLE FUNCIONARIO
+  ADD CONSTRAINT UQ_id_funcionario UNIQUE (id_funcionario);
+
+ALTER TABLE FUNCIONARIO
+  ADD CONSTRAINT UQ_cpf UNIQUE (cpf);
+
+ALTER TABLE FUNCIONARIO
+  ADD CONSTRAINT UQ_telefone UNIQUE (telefone);
+
+CREATE TABLE PRODUTO
+(
+  nome    VARCHAR(100) NOT NULL,
+  id_prod INT          NOT NULL AUTO_INCREMENT,
+  preco   FLOAT        NOT NULL,
+  PRIMARY KEY (id_prod)
+);
+
+ALTER TABLE PRODUTO
+  ADD CONSTRAINT UQ_id_prod UNIQUE (id_prod);
+
+CREATE TABLE REALIZA_VENDA
+(
+  nota_fiscal    VARCHAR(200) NOT NULL,
+  id_atendimento INT          NOT NULL,
+  id_venda       INT          NOT NULL
+);
+
+CREATE TABLE VENDA
+(
+  id_venda   INT          NOT NULL AUTO_INCREMENT,
+  cod_barras VARCHAR(100) NULL    ,
+  id_prod    INT          NOT NULL,
+  PRIMARY KEY (id_venda)
+);
+
+ALTER TABLE VENDA
+  ADD CONSTRAINT UQ_id_venda UNIQUE (id_venda);
+
+ALTER TABLE VENDA
+  ADD CONSTRAINT UQ_cod_barras UNIQUE (cod_barras);
+
+ALTER TABLE ATENDIMENTO
+  ADD CONSTRAINT FK_CLIENTE_TO_ATENDIMENTO
+    FOREIGN KEY (id_cliente)
+    REFERENCES CLIENTE (id_cliente);
+
+ALTER TABLE ATENDIMENTO
+  ADD CONSTRAINT FK_FUNCIONARIO_TO_ATENDIMENTO
+    FOREIGN KEY (id_funcionario)
+    REFERENCES FUNCIONARIO (id_funcionario);
+
+ALTER TABLE REALIZA_VENDA
+  ADD CONSTRAINT FK_ATENDIMENTO_TO_REALIZA_VENDA
+    FOREIGN KEY (id_atendimento)
+    REFERENCES ATENDIMENTO (id_atendimento);
+
+ALTER TABLE REALIZA_VENDA
+  ADD CONSTRAINT FK_VENDA_TO_REALIZA_VENDA
+    FOREIGN KEY (id_venda)
+    REFERENCES VENDA (id_venda);
+
+ALTER TABLE VENDA
+  ADD CONSTRAINT FK_PRODUTO_TO_VENDA
+    FOREIGN KEY (id_prod)
+    REFERENCES PRODUTO (id_prod);
