@@ -19,7 +19,7 @@ class Funcionario {
     }
 
 
-    // Método para salvar um aluno no banco de dados
+    // Método para salvar um funcionario no banco de dados
     public function salvar() {
         $conn = getConnection();
         $stmt = $conn->prepare("INSERT INTO alunos (nome, cpf, telefone, curriculo) VALUES (:nome, :cpf, :telefone, :curriculo)");
@@ -31,7 +31,7 @@ class Funcionario {
     }
 
 
-    // Método para buscar um aluno pelo ID
+    // Método para buscar um funcionario pelo ID
     public static function buscarPorId(int $id) {
         $conn = getConnection();
         $stmt = $conn->prepare("SELECT * FROM funcionarios WHERE id = :id");
@@ -41,7 +41,7 @@ class Funcionario {
     }
 
 
-    // Método para listar todos os alunos
+    // Método para listar todos os funcionarios
     public static function listarTodos() {
         $conn = getConnection();
         $stmt = $conn->query("SELECT * FROM funcionarios");
@@ -49,7 +49,7 @@ class Funcionario {
     }
 
 
-    // Método para atualizar um aluno
+    // Método para atualizar um funcionario
     public function atualizar(int $id) {
         $conn = getConnection();
         $stmt = $conn->prepare("UPDATE funcionarios SET nome = :nome, cpf = :cpf, telefone = :telefone, curriculo = :curriculo WHERE id = :id");
@@ -62,7 +62,7 @@ class Funcionario {
     }
 
 
-    // Método para excluir um aluno
+    // Método para excluir um funcionario
     public static function excluir($id) {
         $conn = getConnection();
         $stmt = $conn->prepare("DELETE FROM funcionarios WHERE id = :id");

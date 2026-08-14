@@ -15,7 +15,7 @@ class Venda {
     }
 
 
-    // Método para salvar um aluno no banco de dados
+    // Método para salvar uma venda no banco de dados
     public function salvar() {
         $conn = getConnection();
         $stmt = $conn->prepare("INSERT INTO vendas (codBarras, id_prod) VALUES (:codBarras, :id_prod)");
@@ -35,7 +35,7 @@ class Venda {
     }
 
 
-    // Método para listar todos os alunos
+    // Método para listar todas as vendas
     public static function listarTodos() {
         $conn = getConnection();
         $stmt = $conn->query("SELECT * FROM vendas");

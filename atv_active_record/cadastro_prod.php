@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cadastro de produto</h1>
-    <form action="conexao_prod.php" method="post" enctype="multipart/form-data">
+    <form action="produto.php" method="post" enctype="multipart/form-data">
         <label for="">
             Nome do produto: <input type="text" name="nome" id="nome">
         </label>
