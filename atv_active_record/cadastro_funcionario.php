@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cadastro do Funcionário</h1>
-    <form action="conexao_form_func.php" method="post" enctype="multipart/form-data">
+    <form action="funcionario.php" method="post" enctype="multipart/form-data">
         <label for="">
             Nome do Funcionário: <input type="text" name="nome" id="nome">
         </label>
