@@ -2,7 +2,7 @@
 
 //testando para ver se entra na regra do preco maior que zero e salvando no banco
 
-require_once 'Produto.php';
+require_once '../Produto.php';
 
 $produto = new Produto();
 $produto->setNome('Flores amarelas');

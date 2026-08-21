@@ -10,13 +10,51 @@ class Funcionario {
     private $telefone;
     private $curriculo;
 
+    //gets e sets
+    public function getId(){
+        return $this->id;
+    }
+    public function setId(int $id){
+        $this->id = $id;
+    }
 
-    public function __construct($nome, $cpf, $telefone, $curriculo) {
+    public function getNome(){
+        return $this->nome;
+    }
+    public function setNome(String $nome){
         $this->nome = $nome;
+    }
+
+    public function getCpf(){
+        return $this->cpf;
+    }
+    public function setCpf(int $cpf){
         $this->cpf = $cpf;
+    }
+
+    public function getTelefone(){
+        return $this->telefone;
+    }
+    public function setTelefone(int $telefone){
         $this->telefone = $telefone;
+    }
+
+    public function getCurriculo(){
+        return $this->curriculo;
+    }
+    public function setCurriculo(String $curriculo){
         $this->curriculo = $curriculo;
     }
+
+
+
+    //quando quero passar todos os parâmetros de uma vez (é tipo um get e set junto)
+    // public function __construct($nome, $cpf, $telefone, $curriculo) {
+    //     $this->nome = $nome;
+    //     $this->cpf = $cpf;
+    //     $this->telefone = $telefone;
+    //     $this->curriculo = $curriculo;
+    // }
 
 
     // Método para salvar um funcionario no banco de dados
