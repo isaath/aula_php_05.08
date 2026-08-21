@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cadastro do Funcionário</h1>
-    <form action="funcionario.php" method="post" enctype="multipart/form-data">
+    <form action="Funcionario.php" method="post" enctype="multipart/form-data">
         <label for="">
             Nome do Funcionário: <input type="text" name="nome" id="nome">
         </label>
@@ -42,7 +42,7 @@ $pass = '';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=sist_floricultura;charset=utf8mb4", $user, $pass);
 
-    $sql = "SELECT * FROM funcionario ORDER BY id_funcionario DESC";
+    $sql = "SELECT * FROM Funcionario ORDER BY id_funcionario DESC";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute();

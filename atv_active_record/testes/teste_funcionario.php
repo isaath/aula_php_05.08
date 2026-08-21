@@ -6,9 +6,9 @@ $funcionario = new Funcionario();
 
 $funcionario->setNome('Emilli');
 $funcionario->setCpf('12345678912');
-$funcionario->setTelefone('555555555');
+$funcionario->setTelefone('222222222');
 $funcionario->setCurriculo('aaaaaaa');
 
-$funcionario->save();
+$funcionario->salvar();
 
 echo "funcionario salvo com sucesso!";

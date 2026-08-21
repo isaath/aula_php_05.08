@@ -28,14 +28,14 @@ class Funcionario {
     public function getCpf(){
         return $this->cpf;
     }
-    public function setCpf(int $cpf){
+    public function setCpf(String $cpf){
         $this->cpf = $cpf;
     }
 
     public function getTelefone(){
         return $this->telefone;
     }
-    public function setTelefone(int $telefone){
+    public function setTelefone(String $telefone){
         $this->telefone = $telefone;
     }
 
@@ -60,7 +60,7 @@ class Funcionario {
     // Método para salvar um funcionario no banco de dados
     public function salvar() {
         $conn = getConnection();
-        $stmt = $conn->prepare("INSERT INTO alunos (nome, cpf, telefone, curriculo) VALUES (:nome, :cpf, :telefone, :curriculo)");
+        $stmt = $conn->prepare("INSERT INTO funcionario (nome, cpf, telefone, curriculo) VALUES (:nome, :cpf, :telefone, :curriculo)");
         $stmt->bindParam(":nome", $this->nome);
         $stmt->bindParam(":cpf", $this->cpf);
         $stmt->bindParam(":telefone", $this->telefone);
