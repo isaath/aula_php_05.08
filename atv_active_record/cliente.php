@@ -11,12 +11,30 @@ class Cliente {
     private $data_nasc;
 
 
-    public function __construct($nome, $cpf, $telefone, $data_nasc) {
-        $this->nome = $nome;
-        $this->cpf = $cpf;
-        $this->telefone = $telefone;
-        $this->data_nasc = $data_nasc;
+    //gets e sets
+    public function getId(){
+        return $this->id;
     }
+    public function setId(int $id){
+        $this->id = $id;
+    }
+
+    public function getNome(){
+        return $this->nome;
+    }
+    public function setNome(String $nome){
+        $this->nome = $nome;
+    }
+
+    //ISA: TERMINAR OS GETS E OS SETS DAQUI!!!
+
+
+    // public function __construct($nome, $cpf, $telefone, $data_nasc) {
+    //     $this->nome = $nome;
+    //     $this->cpf = $cpf;
+    //     $this->telefone = $telefone;
+    //     $this->data_nasc = $data_nasc;
+    // }
 
 
     // Método para salvar um cliente no banco de dados
