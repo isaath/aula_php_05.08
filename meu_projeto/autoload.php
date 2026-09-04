@@ -1,6 +1,9 @@
 <?php
 function carregar($classe){
-    require_once($classe . ".php");
+    $caminho = "src/Models" . $classe . ".php";
+    if(file_exists($caminho)){
+        require_once($caminho);
+    }
 
 }
 
