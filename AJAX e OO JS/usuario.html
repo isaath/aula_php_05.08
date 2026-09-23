@@ -7,13 +7,21 @@
 </head>
 <body>
     <script>
-        function Usuario(nome, senha, data_nasc,id){
+        function Usuario(nome, email, senha, data_nasc,id){
             //variavel publica
             this.nome = nome;
+            
+
+            
 
             //variaveis privadas
             let senha = senha;
             let data_nasc = data_nasc;
+            let email = validaEmail(email);
+
+            function validaEmail(email){
+                return email;
+            }
 
             //gets e sets
             this.getSenha = function(){
@@ -28,9 +36,24 @@
             }
             this.setData_nasc = function(data_nasc){
                 this.data_nasc = data_nasc;
-            }   
+            } 
+            
+            this.getEmail = function(){
+                return email;
+            }
+            this.setEmail = function(email){
+                this.email = email;
+            }
         }
+        
+        //cod do sor
+        function Usuario(email){
+            let email = validaEmail(email);
 
+            function validaEmail(email){
+                return email;
+            }
+        }
 
     </script>
 </body>
