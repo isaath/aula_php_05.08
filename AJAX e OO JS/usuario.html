@@ -10,10 +10,8 @@
         function Usuario(nome, email, senha, data_nasc,id){
             //variavel publica
             this.nome = nome;
-            
 
-            
-
+        
             //variaveis privadas
             let senha = senha;
             let data_nasc = data_nasc;
@@ -49,7 +47,23 @@
             }
             this.setData_nasc = function(data_nasc){
                 this.data_nasc = data_nasc;
-            } 
+            }
+
+            function calcularIdade(data_nasc) {
+                const hoje = new Date();
+                //adiciona o fuso horário para evitar discrepância de data
+                const nascimento = new Date(data_nasc + 'T00:00:00'); 
+    
+                let idade = hoje.getFullYear() - nascimento.getFullYear();
+                const mes = hoje.getMonth() - nascimento.getMonth();
+
+                //se ainda não chegou no mês de aniversário, ou se está no mês mas o dia ainda não chegou:
+                if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+                    idade--;
+                }
+
+                return idade;
+            }
             
             this.getEmail = function(){
                 return email;
