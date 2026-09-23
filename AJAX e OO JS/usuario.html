@@ -30,6 +30,19 @@
             this.setSenha = function(senha){
                 this.senha = senha;
             }
+            function contemMaiusculaEMinuscula(senha) {
+                const temMaiuscula = /[A-Z]/.test(senha);
+                const temMinuscula = /[a-z]/.test(senha);
+                return temMaiuscula && temMinuscula;
+            }
+            this.setSenha = function (senha) {
+                if (contemMaiusculaEMinuscula() == true) {
+                    this.senha = senha;
+                }
+            };
+
+
+
 
             this.getData_nasc = function(){
                 return data_nasc;
