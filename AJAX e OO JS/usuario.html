@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação do Usuário</title>
+</head>
+<body>
+    <script>
+        function Usuario(nome, senha, data_nasc,id){
+            //variavel publica
+            this.nome = nome;
+
+            //variaveis privadas
+            let senha = senha;
+            let data_nasc = data_nasc;
+
+            //gets e sets
+            this.getSenha = function(){
+                return senha;
+            }
+            this.setSenha = function(senha){
+                this.senha = senha;
+            }
+
+            this.getData_nasc = function(){
+                return data_nasc;
+            }
+            this.setData_nasc = function(data_nasc){
+                this.data_nasc = data_nasc;
+            }   
+        }
+
+
+    </script>
+</body>
+</html>
